@@ -1,5 +1,7 @@
 body {
     max-width:100%;
+    min-height:100vh;
+    max-height:100vh;
     margin:0;
 }
 
@@ -7,16 +9,18 @@ body {
     min-height:100vh;
     min-width:100%;
     padding:none;
+    padding-bottom:0;
     margin:0;
     outline:0;
+    border:0;
     display:grid;
     grid-template-columns: repeat(15, 1fr);
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto 1fr;
 }
 
 #header {
     background-color:darkslategray;
-    height:70px;
+    /* height:70px; */
     grid-column: 1 / span 15;
     position: sticky;
 }
@@ -24,15 +28,32 @@ body {
     background-color: rgb(230, 230, 230);
     grid-column: 1 / span 3;
     grid-row: 2;
+    border-right: 1px solid grey;
+}
+#side-container {
+    background-color: cadetblue;
+    width: 90%;
+    height:95%;
+    margin:auto;
+    margin-bottom:15px;
+    margin-top:15px;
 }
 #main {
     background-color:rgb(242, 237, 233);
     grid-column: 4 / span 12;
-    
 }
-#footer {
-    background-color:rgb(72, 108, 108);
-    min-height:40px; 
-    grid-column: 1 / span 15;
-    position: sticky;
+#main-container {
+    background-color: tomato;
+    width:95%;
+    height:95%;
+    margin:auto;
+    margin-top:15px;
+}
+
+#logo {
+    color:#F2EDE9;
+    line-height: 70px;
+    font-size:30px;
+    text-align: center;
+    width: 10%;
 }
