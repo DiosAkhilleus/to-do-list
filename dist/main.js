@@ -1,1 +1,1 @@
-console.log("Webpack Loaded");
+(()=>{"use strict";console.log("Webpack Loaded")})();
