@@ -1,7 +1,7 @@
 
-function setSide () {
+function setSide (color) {
     let sideContainer = document.getElementById('side-container');
-    sideContainer.style.backgroundColor = 'grey';
+    sideContainer.style.backgroundColor = `${color}`;
 }
 
 export {  setSide  };
