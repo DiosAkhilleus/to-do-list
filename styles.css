@@ -1,0 +1,38 @@
+body {
+    max-width:100%;
+    margin:0;
+}
+
+#content {
+    min-height:100vh;
+    min-width:100%;
+    padding:none;
+    margin:0;
+    outline:0;
+    display:grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: auto 1fr auto;
+}
+
+#header {
+    background-color:darkslategray;
+    height:70px;
+    grid-column: 1 / span 15;
+   
+}
+#sidebar {
+    background-color: rgb(230, 230, 230);
+    grid-column: 1 / span 3;
+    grid-row: 2;
+}
+#main {
+    background-color:rgb(242, 237, 233);
+    grid-column: 4 / span 12;
+    
+}
+#footer {
+    background-color:rgb(72, 108, 108);
+    min-height:40px; 
+    grid-column: 1 / span 15;
+
+}
