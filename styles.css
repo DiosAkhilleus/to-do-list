@@ -30,8 +30,18 @@ body {
     line-height: 70px;
     font-size:30px;
     text-align: center;
-    width: 10%;
-    margin-left:10px;
+    width: 70px;
+    margin-left:7.8%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display:inline-block;
+}
+#nav-title {
+   position:absolute;
+   color:#E6E6E6;
+   right:34%;
+   top: 25%;
+   font-size:40px;
 }
 #sidebar {
     background-color: rgb(230, 230, 230);
