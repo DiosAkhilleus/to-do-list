@@ -1,5 +1,5 @@
 import {  todoItem, setTitle, setDescr, setDate, setPriority  } from './logic';
-import {  setSide  } from './dom';
+import {  newList  } from './dom';
 import { compareAsc, format } from 'date-fns'
 
 // format(new Date(2014, 1, 11), 'yyyy-MM-dd')
@@ -15,4 +15,3 @@ import { compareAsc, format } from 'date-fns'
 console.log('Webpack Loaded');
 
 let jeff = todoItem('jeff', 'getJeff', 'March 20', 'Low');
-
