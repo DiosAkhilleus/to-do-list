@@ -45,6 +45,22 @@ body {
    font-size:40px;
    user-select: none;
 }
+#help {
+    display:block;
+    position:absolute;
+    height:96px;
+    width:150px;
+    text-align:center;
+    line-height:96px;
+    right:0;
+    top:0;
+    font-size:40px;
+    color:#E6E6E6
+}
+#help:hover {
+    background-color: rgb(137, 155, 155);
+    cursor:pointer;
+}
 #sidebar {
     background-color: rgb(230, 230, 230);
     grid-column: 1 / span 3;
