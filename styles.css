@@ -120,7 +120,6 @@ background-color:none;
 padding-left:10px;
 color:rgb(109, 109, 109);
 transition: color 0.2s linear 0s;
-user-select: none;
 }
 .tab:hover {
     color:rgb(53, 52, 52);
