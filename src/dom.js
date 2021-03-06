@@ -49,7 +49,6 @@ function addList () {
     Swal.fire({
         title: 'Enter List Name',
         input: 'text',
-        inputLabel: 'List Name',
         showCancelButton: true,
         inputValidator: (value) => {
           if (!value) {
