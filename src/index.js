@@ -1,6 +1,7 @@
 import {  todoItem, setTitle, setDescr, setDate, setPriority  } from './logic';
-import {  newList  } from './dom';
-import { compareAsc, format } from 'date-fns'
+import {  newList, toggleRemove, remove, reset  } from './dom';
+import { compareAsc, format } from 'date-fns';
+import Swal from 'sweetalert2';
 
 // format(new Date(2014, 1, 11), 'yyyy-MM-dd')
 // const dates = [
@@ -13,5 +14,9 @@ import { compareAsc, format } from 'date-fns'
 //todo structure: title, description, dueDate, priority
 
 console.log('Webpack Loaded');
+document.getElementById('remove').addEventListener('click', toggleRemove);
+
+newList("List 1");
+newList("List 2");
 
 let jeff = todoItem('jeff', 'getJeff', 'March 20', 'Low');

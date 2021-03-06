@@ -8,13 +8,42 @@ function newList (name) {
     inp.setAttribute('type', 'radio');
     lab.setAttribute('class', 'tab');
     lab.setAttribute('for', `${count+1}`)
+    lab.setAttribute('id', `lab${count}`);
     lab.textContent = name;
 
     document.getElementById('side-container').appendChild(inp);
     inp.after(lab);
 }
 
+function toggleRemove () {
+    let tabs = document.getElementsByClassName('tab');
+    console.log(tabs);
+    for(let i = 1; i < tabs.length; i++){
+        tabs[i].style.color = 'rgb(130, 50, 50)';
+        tabs[i].addEventListener('click', remove);
+    }
+    document.getElementById('remove').style.backgroundColor = "rgb(100, 124, 124)";
 
-
-
-export {  newList  };
+    let finished = document.createElement('button');
+    finished.setAttribute('id', 'finished');
+    finished.textContent = "Done";
+    document.getElementById('button-container').after(finished);
+    finished.addEventListener('click', reset);
+    
+}
+function remove (e) {
+    let targ = e.target.id;
+    let rem = document.getElementById(`${targ}`);
+    document.getElementById(`${targ}`).parentElement.removeChild(rem);
+}
+function reset () {
+    let fin = document.getElementById('finished');
+    document.getElementById('remove').style.backgroundColor = "rgb(63, 79, 79)";
+    document.getElementById('finished').parentElement.removeChild(fin);
+    let tabs = document.getElementsByClassName('tab');
+    for(let i = 1; i < tabs.length; i++){
+        tabs[i].style.color = 'rgb(109, 109, 109)';
+        tabs[i].removeEventListener('click', remove);
+    }
+}
+export {  newList, toggleRemove, remove, reset  };
