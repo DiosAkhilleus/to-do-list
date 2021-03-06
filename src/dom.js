@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2';
 
 function newList (name) {
     let count = document.querySelectorAll('#side-container .tab').length;
@@ -44,4 +45,23 @@ function resetRemove () {
     document.getElementById('remove').removeAttribute('style');
     
 }
-export {  newList, toggleRemove, remove, resetRemove  };
+function addList () {
+    Swal.fire({
+        title: 'Enter List Name',
+        input: 'text',
+        inputLabel: 'List Name',
+        showCancelButton: true,
+        inputValidator: (value) => {
+          if (!value) {
+            return 'Must name list something!'
+          }
+        }
+      }).then(function (value) {
+          newList(value.value);
+      });
+}
+
+
+
+
+export {  newList, toggleRemove, remove, resetRemove, addList  };

@@ -1,5 +1,5 @@
 import {  todoItem, setTitle, setDescr, setDate, setPriority  } from './logic';
-import {  newList, toggleRemove, remove, resetRemove  } from './dom';
+import {  newList, toggleRemove, remove, resetRemove, addList  } from './dom';
 import { compareAsc, format } from 'date-fns';
 import Swal from 'sweetalert2';
 
@@ -14,6 +14,4 @@ import Swal from 'sweetalert2';
 //todo structure: title, description, dueDate, priority
 
 document.getElementById('remove').addEventListener('click', toggleRemove);
-
-newList("List 1");
-newList("List 2");
+document.getElementById('add').addEventListener('click', addList);
