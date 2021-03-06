@@ -62,6 +62,4 @@ function addList () {
 }
 
 
-
-
 export {  newList, toggleRemove, remove, resetRemove, addList  };
