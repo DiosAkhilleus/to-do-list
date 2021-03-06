@@ -43,14 +43,5 @@ function resetRemove () {
     document.getElementById('remove').removeEventListener('click', resetRemove); 
     document.getElementById('remove').removeAttribute('style');
     
-    // let rem = document.getElementById('remove');
-    // document.getElementById('remove').parentElement.removeChild(rem);
-    // let btn = document.createElement('button');
-    // btn.setAttribute('id', 'remove');
-    // btn.textContent = "Remove List(s)";
-    // document.getElementById('button-container').appendChild(btn);
-    // document.getElementById('space').after(btn);
-    
-    
 }
 export {  newList, toggleRemove, remove, resetRemove  };
