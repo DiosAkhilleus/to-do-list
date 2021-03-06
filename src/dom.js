@@ -23,13 +23,8 @@ function toggleRemove () {
         tabs[i].addEventListener('click', remove);
     }
     document.getElementById('remove').style.backgroundColor = "rgb(100, 124, 124)";
-
-    let finished = document.createElement('button');
-    finished.setAttribute('id', 'finished');
-    finished.textContent = "Done";
-    document.getElementById('button-container').after(finished);
-    finished.addEventListener('click', reset);
-    
+    document.getElementById('remove').removeEventListener('click', toggleRemove);
+    document.getElementById('remove').addEventListener('click', reset);
 }
 function remove (e) {
     let targ = e.target.id;
@@ -39,11 +34,12 @@ function remove (e) {
 function reset () {
     let fin = document.getElementById('finished');
     document.getElementById('remove').style.backgroundColor = "rgb(63, 79, 79)";
-    document.getElementById('finished').parentElement.removeChild(fin);
     let tabs = document.getElementsByClassName('tab');
     for(let i = 1; i < tabs.length; i++){
         tabs[i].style.color = 'rgb(109, 109, 109)';
         tabs[i].removeEventListener('click', remove);
     }
+    document.getElementById('remove').addEventListener('click', toggleRemove);
+    document.getElementById('remove').removeEventListener('click', reset);
 }
 export {  newList, toggleRemove, remove, reset  };
