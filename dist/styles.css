@@ -30,13 +30,40 @@ body {
     grid-row: 2;
     border-right: 1px solid grey;
 }
+#side-title {
+    background-color:none;
+    color: darkslategray;
+    text-align:center;
+    font-size:25px;
+    height:45px;
+    line-height:45px;
+    margin-top:10px;
+}
 #side-container {
-    background-color: cadetblue;
-    width: 90%;
-    height:95%;
+    /* background-color: cadetblue; */
+    width: 70%;
+    height:80%;
     margin:auto;
-    margin-bottom:15px;
-    margin-top:15px;
+    margin-top:11px;
+    border: 3px solid rgb(137, 155, 155);
+}
+.side-nav {
+display:none;
+}
+.tab {
+display:block;
+margin:auto;
+text-align:left;
+font-size:20px;
+line-height:40px;
+background-color:none;
+padding-left:10px;
+color:rgb(109, 109, 109);
+transition: color 0.2s linear 0s;
+}
+.tab:hover {
+    color:rgb(53, 52, 52);
+    cursor:pointer;
 }
 #main {
     background-color:rgb(242, 237, 233);
@@ -44,10 +71,10 @@ body {
 }
 #main-container {
     background-color: tomato;
-    width:95%;
-    height:95%;
+    width:80%;
+    height:80%;
     margin:auto;
-    margin-top:15px;
+    margin-top:65px;
 }
 
 #logo {
