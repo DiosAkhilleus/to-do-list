@@ -24,22 +24,33 @@ function toggleRemove () {
     }
     document.getElementById('remove').style.backgroundColor = "rgb(100, 124, 124)";
     document.getElementById('remove').removeEventListener('click', toggleRemove);
-    document.getElementById('remove').addEventListener('click', reset);
+    document.getElementById('remove').addEventListener('click', resetRemove);
 }
 function remove (e) {
     let targ = e.target.id;
     let rem = document.getElementById(`${targ}`);
     document.getElementById(`${targ}`).parentElement.removeChild(rem);
 }
-function reset () {
+function resetRemove () {
     let fin = document.getElementById('finished');
     document.getElementById('remove').style.backgroundColor = "rgb(63, 79, 79)";
     let tabs = document.getElementsByClassName('tab');
     for(let i = 1; i < tabs.length; i++){
-        tabs[i].style.color = 'rgb(109, 109, 109)';
+        tabs[i].removeAttribute('style');
         tabs[i].removeEventListener('click', remove);
     }
     document.getElementById('remove').addEventListener('click', toggleRemove);
-    document.getElementById('remove').removeEventListener('click', reset);
+    document.getElementById('remove').removeEventListener('click', resetRemove); 
+    document.getElementById('remove').removeAttribute('style');
+    
+    // let rem = document.getElementById('remove');
+    // document.getElementById('remove').parentElement.removeChild(rem);
+    // let btn = document.createElement('button');
+    // btn.setAttribute('id', 'remove');
+    // btn.textContent = "Remove List(s)";
+    // document.getElementById('button-container').appendChild(btn);
+    // document.getElementById('space').after(btn);
+    
+    
 }
-export {  newList, toggleRemove, remove, reset  };
+export {  newList, toggleRemove, remove, resetRemove  };

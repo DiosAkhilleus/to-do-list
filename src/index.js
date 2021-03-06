@@ -1,5 +1,5 @@
 import {  todoItem, setTitle, setDescr, setDate, setPriority  } from './logic';
-import {  newList, toggleRemove, remove, reset  } from './dom';
+import {  newList, toggleRemove, remove, resetRemove  } from './dom';
 import { compareAsc, format } from 'date-fns';
 import Swal from 'sweetalert2';
 
@@ -13,10 +13,7 @@ import Swal from 'sweetalert2';
 
 //todo structure: title, description, dueDate, priority
 
-console.log('Webpack Loaded');
 document.getElementById('remove').addEventListener('click', toggleRemove);
 
 newList("List 1");
 newList("List 2");
-
-let jeff = todoItem('jeff', 'getJeff', 'March 20', 'Low');
