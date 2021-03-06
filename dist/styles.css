@@ -67,19 +67,18 @@ body {
 }
 #add, #remove, #finished {
     height:30px;
-    width:100px;
+    width:120px;
+    min-height:30px;
+    min-width:120px;
     border:none;
     background-color:rgb(63, 79, 79);
     color:#E6E6E6;
     font-size:14px;
     user-select: none;
 }
-#finished {
-    text-align:center;
-    margin-top:4px;
-}
 #add:hover, #remove:hover{
     cursor:pointer;
+    background-color:rgb(100, 124, 124);
 }
 #side-container {
     /* background-color: cadetblue; */
