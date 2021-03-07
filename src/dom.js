@@ -1,7 +1,7 @@
 import {  storeUserData  } from './logic'
 import Swal from 'sweetalert2';
 
-const newList = (name) => {
+const newList = (name) => { // creates a new list with name passed
     let count = document.querySelectorAll('#side-container .tab').length;
     let inp = document.createElement('input');
     let lab = document.createElement('label');
@@ -18,7 +18,7 @@ const newList = (name) => {
     storeUserData();
 }
 
-const toggleRemove = () => {
+const toggleRemove = () => { // toggles the removal state so that elements can be removed from list set, adds done button
     let tabs = document.getElementsByClassName('tab');
     console.log(tabs);
     for(let i = 1; i < tabs.length; i++){
@@ -32,7 +32,7 @@ const toggleRemove = () => {
     document.getElementById('side-container').after(btn);
     document.getElementById('done').addEventListener('click', resetRemove);
 }
-const remove = (e) => {
+const remove = (e) => { // removes the target element 
     let targ = e.target.id;
     let rem = document.getElementById(`${targ}`);
     let rem2 = rem.previousElementSibling;
@@ -40,7 +40,7 @@ const remove = (e) => {
     document.getElementById(`${targ}`).parentElement.removeChild(rem);
     document.getElementById(`${rem2ID}`).parentElement.removeChild(rem2);
 }
-const resetRemove = () => {
+const resetRemove = () => { // makes elements in sidebar unremovable, removes done button
     let done = document.getElementById('done');
     let tabs = document.getElementsByClassName('tab');
     for(let i = 1; i < tabs.length; i++){
@@ -53,7 +53,7 @@ const resetRemove = () => {
     
     storeUserData();
 }
-const addList = () => {
+const addList = () => { // creates a new list by firing an alert in which the user can input a name, which is then passed to the newList() function
     Swal.fire({
         title: 'Enter List Name',
         input: 'text',
@@ -68,7 +68,7 @@ const addList = () => {
       });
 }
 
-const showHelp = () => {
+const showHelp = () => { //displays app info in the form of an alert
     Swal.fire({
         Title: 'Welcome to δα',
         imageUrl: 'https://i.ibb.co/k14phvL/help.png',
