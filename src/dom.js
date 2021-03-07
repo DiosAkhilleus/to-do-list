@@ -8,6 +8,7 @@ const newList = (name) => { // creates a new list with name passed
     inp.setAttribute('id', `${count+1}`);
     inp.setAttribute('class', 'side-nav');
     inp.setAttribute('type', 'radio');
+    inp.setAttribute('name', 'side-tabs');
     lab.setAttribute('class', 'tab');
     lab.setAttribute('for', `${count+1}`)
     lab.setAttribute('id', `lab${count+1}`);
@@ -16,6 +17,7 @@ const newList = (name) => { // creates a new list with name passed
     document.getElementById('side-container').appendChild(inp);
     inp.after(lab);
     storeUserData();
+    setTabListeners();
 }
 
 const toggleRemove = () => { // toggles the removal state so that elements can be removed from list set, adds done button
@@ -50,7 +52,9 @@ const resetRemove = () => { // makes elements in sidebar unremovable, removes do
     document.getElementById('remove').addEventListener('click', toggleRemove);
     document.getElementById('done').removeEventListener('click', resetRemove); 
     document.getElementById('done').parentElement.removeChild(done);
-    
+    if(document.getElementById('side-container').childElementCount === 2){
+        document.getElementById('1').checked = true;
+    }
     storeUserData();
 }
 const addList = () => { // creates a new list by firing an alert in which the user can input a name, which is then passed to the newList() function
@@ -75,6 +79,20 @@ const showHelp = () => { //displays app info in the form of an alert
         showCancelButton: false,
     })
 }
+const setTab = (e) => {
+    let tabs = document.querySelectorAll('.tab');
+    for(let i = 0; i < tabs.length; i++){
+        tabs[i].checked = false;
+    }   
+    e.target.checked = true;
+    console.log(e.target.checked);
+}
+const setTabListeners = () => {
+    let tabs = document.querySelectorAll('.tab');
+    for(let i = 0; i < tabs.length; i++){
+        tabs[i].addEventListener('click', setTab);
+    }
+}
 
 
-export {  newList, toggleRemove, remove, resetRemove, addList, showHelp  };
+export {  newList, toggleRemove, remove, resetRemove, addList, showHelp, setTab, setTabListeners  };

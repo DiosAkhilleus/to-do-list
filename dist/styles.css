@@ -107,6 +107,10 @@ body {
     background-color: rgb(150, 85, 85);
 
 }
+input[type='radio']:checked + label {
+    color:rgb(31, 101, 90);
+}
+
 #side-container {
     /* background-color: cadetblue; */
     width: 70%;
@@ -137,9 +141,6 @@ transition: color 0.2s linear 0s;
     color:rgb(53, 52, 52);
     cursor:pointer;
 }
-.tab:active {
-    color:rgb(31, 101, 90);
-}
 #main {
     background-color:rgb(242, 237, 233);
     grid-column: 4 / span 12;
@@ -154,7 +155,6 @@ transition: color 0.2s linear 0s;
     color: #E6E6E6;
     border:none;
     font-size:20px;
-    border-radius: 20px;
 }
 #main-container {
     width:80%;
