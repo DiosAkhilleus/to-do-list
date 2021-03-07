@@ -92,9 +92,17 @@ body {
     font-size:14px;
     user-select: none;
 }
-#add:hover, #remove:hover{
+#remove {
+    background-color:rgb(130, 50, 50);
+}
+#add:hover{
     cursor:pointer;
     background-color:rgb(100, 124, 124);
+}
+#remove:hover {
+    cursor: pointer;
+    background-color: rgb(150, 85, 85);
+
 }
 #side-container {
     /* background-color: cadetblue; */
