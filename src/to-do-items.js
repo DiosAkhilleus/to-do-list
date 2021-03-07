@@ -86,13 +86,13 @@ const createToDo = (array) => {
     document.getElementById('new-to-do').before(todo);
 
     if(imp === 'high'){
-        document.getElementById(`prior${total+1}`).style.backgroundColor = 'rgb(130, 50, 50)';
+        document.getElementById(`prior${total+1}`).style.backgroundColor = 'darkred';
     }
     if(imp === 'medium'){
         document.getElementById(`prior${total+1}`).style.backgroundColor = 'orange';
     }
     if(imp === 'low'){
-        document.getElementById(`prior${total+1}`).style.backgroundColor = 'lightgreen';
+        document.getElementById(`prior${total+1}`).style.backgroundColor = 'olivedrab';
     }
 
     // <div class='to-do-element' id='1'>
