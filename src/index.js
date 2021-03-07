@@ -1,7 +1,8 @@
-import {  todoItem, setTitle, setDescr, setDate, setPriority, storeUserData  } from './logic';
-import {  newList, toggleRemove, remove, resetRemove, addList, showHelp, setTab  } from './dom';
-import { compareAsc, format } from 'date-fns';
-import Swal from 'sweetalert2';
+import {  toggleRemove, addList, showHelp  } from './dom';
+
+// import { compareAsc, format } from 'date-fns';
+
+// import Swal from 'sweetalert2';
 
 // format(new Date(2014, 1, 11), 'yyyy-MM-dd')
 // const dates = [
@@ -10,7 +11,6 @@ import Swal from 'sweetalert2';
 //     new Date(1989, 6, 10),
 //   ] 
 //   dates.sort(compareAsc);
-
 //todo structure: title, description, dueDate, priority
 
 document.getElementById('remove').addEventListener('click', toggleRemove);

@@ -10,6 +10,7 @@ const setPriority = (item, str) => {item.priority = str};
 
 const storeUserData = () => { // stores sidebar data in localStorage
     let sideBarData = document.getElementById('side-container');
+    // eslint-disable-next-line no-undef
     localStorage.setItem(sidebar, sideBarData.outerHTML);
 }
 
