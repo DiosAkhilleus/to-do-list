@@ -60,7 +60,7 @@ const addList = () => {
         showCancelButton: true,
         inputValidator: (value) => {
           if (!value) {
-            return 'Must name list something!'
+            return 'List name can\'t be blank!'
           }
         }
       }).then(function (value) {
