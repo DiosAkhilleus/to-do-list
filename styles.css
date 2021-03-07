@@ -81,7 +81,7 @@ body {
 #button-container{
     text-align:center;
 }
-#add, #remove, #finished {
+#add, #remove, #finished, #done {
     height:30px;
     width:120px;
     min-height:30px;
@@ -95,7 +95,10 @@ body {
 #remove {
     background-color:rgb(130, 50, 50);
 }
-#add:hover{
+#done {
+    margin-top:10px;
+}
+#add:hover, #done:hover{
     cursor:pointer;
     background-color:rgb(100, 124, 124);
 }
@@ -107,13 +110,14 @@ body {
 #side-container {
     /* background-color: cadetblue; */
     width: 70%;
-    height:80%;
+    height:60%;
     max-height:80%;
     margin:auto;
     margin-top:11px;
     padding-top:10px;
     border-top: 3px solid rgb(137, 155, 155);
     border-bottom: 3px solid rgb(137, 155, 155);
+    overflow-y:auto;
 }
 .side-nav {
 display:none;
