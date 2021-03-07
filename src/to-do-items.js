@@ -1,4 +1,5 @@
 import Swal from 'sweetalert2';
+import {    } from './logic';
 
 const newToDo = () => {
     let arr = [];
@@ -31,8 +32,17 @@ const newToDo = () => {
             }
         }
       }).then (function(){
-          console.log(arr);
+        createToDo(arr);
       });
+      arr = [];
+}
+
+const createToDo = (array) => {
+    console.log(array);
+    // let title = array[0];
+    // let desc = array[1];
+    // let due = array[2];
+    // let imp = array[3];
 }
 
 export {  newToDo  };

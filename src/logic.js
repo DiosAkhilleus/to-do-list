@@ -1,4 +1,4 @@
-const todoItem = (title, description, dueDate, priority) => {
+const toDoItem = (title, description, dueDate, priority) => {
 
     return {  title, description, dueDate, priority  };
 }; 
@@ -15,4 +15,4 @@ const storeUserData = () => { // stores sidebar data in localStorage
 }
 
 
-export {  todoItem, setTitle, setDescr, setDate, setPriority, storeUserData  };
+export {  toDoItem, setTitle, setDescr, setDate, setPriority, storeUserData  };
