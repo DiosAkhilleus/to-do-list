@@ -1,5 +1,5 @@
 import {  todoItem, setTitle, setDescr, setDate, setPriority  } from './logic';
-import {  newList, toggleRemove, remove, resetRemove, addList  } from './dom';
+import {  newList, toggleRemove, remove, resetRemove, addList, showHelp  } from './dom';
 import { compareAsc, format } from 'date-fns';
 import Swal from 'sweetalert2';
 
@@ -15,3 +15,4 @@ import Swal from 'sweetalert2';
 
 document.getElementById('remove').addEventListener('click', toggleRemove);
 document.getElementById('add').addEventListener('click', addList);
+document.getElementById('help').addEventListener('click', showHelp);

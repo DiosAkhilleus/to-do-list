@@ -1,6 +1,6 @@
 import Swal from 'sweetalert2';
 
-function newList (name) {
+const newList = (name) => {
     let count = document.querySelectorAll('#side-container .tab').length;
     let inp = document.createElement('input');
     let lab = document.createElement('label');
@@ -16,23 +16,22 @@ function newList (name) {
     inp.after(lab);
 }
 
-function toggleRemove () {
+const toggleRemove = () => {
     let tabs = document.getElementsByClassName('tab');
     console.log(tabs);
     for(let i = 1; i < tabs.length; i++){
         tabs[i].style.color = 'rgb(130, 50, 50)';
         tabs[i].addEventListener('click', remove);
     }
-    document.getElementById('remove').style.backgroundColor = "rgb(100, 124, 124)";
     document.getElementById('remove').removeEventListener('click', toggleRemove);
     document.getElementById('remove').addEventListener('click', resetRemove);
 }
-function remove (e) {
+const remove = (e) => {
     let targ = e.target.id;
     let rem = document.getElementById(`${targ}`);
     document.getElementById(`${targ}`).parentElement.removeChild(rem);
 }
-function resetRemove () {
+const resetRemove = () => {
     let fin = document.getElementById('finished');
     document.getElementById('remove').style.backgroundColor = "rgb(63, 79, 79)";
     let tabs = document.getElementsByClassName('tab');
@@ -45,7 +44,7 @@ function resetRemove () {
     document.getElementById('remove').removeAttribute('style');
     
 }
-function addList () {
+const addList = () => {
     Swal.fire({
         title: 'Enter List Name',
         input: 'text',
@@ -60,5 +59,14 @@ function addList () {
       });
 }
 
+const showHelp = () => {
+    Swal.fire({
+        Title: 'Help',
+        text: 'Hello',
+        showCancelButton: true,
 
-export {  newList, toggleRemove, remove, resetRemove, addList  };
+    })
+}
+
+
+export {  newList, toggleRemove, remove, resetRemove, addList, showHelp  };
