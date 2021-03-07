@@ -26,7 +26,11 @@ const toggleRemove = () => {
         tabs[i].addEventListener('click', remove);
     }
     document.getElementById('remove').removeEventListener('click', toggleRemove);
-    document.getElementById('remove').addEventListener('click', resetRemove);
+    let btn = document.createElement('button');
+    btn.setAttribute('id', 'done');
+    btn.textContent = "Done";
+    document.getElementById('side-container').after(btn);
+    document.getElementById('done').addEventListener('click', resetRemove);
 }
 const remove = (e) => {
     let targ = e.target.id;
@@ -37,16 +41,15 @@ const remove = (e) => {
     document.getElementById(`${rem2ID}`).parentElement.removeChild(rem2);
 }
 const resetRemove = () => {
-    let fin = document.getElementById('finished');
-    document.getElementById('remove').style.backgroundColor = "rgb(63, 79, 79)";
+    let done = document.getElementById('done');
     let tabs = document.getElementsByClassName('tab');
     for(let i = 1; i < tabs.length; i++){
         tabs[i].removeAttribute('style');
         tabs[i].removeEventListener('click', remove);
     }
     document.getElementById('remove').addEventListener('click', toggleRemove);
-    document.getElementById('remove').removeEventListener('click', resetRemove); 
-    document.getElementById('remove').removeAttribute('style');
+    document.getElementById('done').removeEventListener('click', resetRemove); 
+    document.getElementById('done').parentElement.removeChild(done);
     
     storeUserData();
 }
