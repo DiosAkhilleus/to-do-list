@@ -19,7 +19,6 @@ const newList = (name) => { // creates a new list with name passed
     storeUserData();
     setTabListeners();
 }
-
 const toggleRemove = () => { // toggles the removal state so that elements can be removed from list set, adds done button
     let tabs = document.getElementsByClassName('tab');
     console.log(tabs);
@@ -71,7 +70,6 @@ const addList = () => { // creates a new list by firing an alert in which the us
           newList(value.value);
       });
 }
-
 const showHelp = () => { //displays app info in the form of an alert
     Swal.fire({
         Title: 'Welcome to δα',
@@ -79,7 +77,7 @@ const showHelp = () => { //displays app info in the form of an alert
         showCancelButton: false,
     })
 }
-const setTab = (e) => {
+const setTab = (e) => { // checks selected sidebar tab
     let tabs = document.querySelectorAll('.tab');
     for(let i = 0; i < tabs.length; i++){
         tabs[i].checked = false;
@@ -87,7 +85,7 @@ const setTab = (e) => {
     e.target.checked = true;
     console.log(e.target.checked);
 }
-const setTabListeners = () => {
+const setTabListeners = () => { // updates sidebar tab click listeners
     let tabs = document.querySelectorAll('.tab');
     for(let i = 0; i < tabs.length; i++){
         tabs[i].addEventListener('click', setTab);
