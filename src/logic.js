@@ -8,5 +8,10 @@ const setDescr =    (item, str) => {item.description = str};
 const setDate =     (item, str) => {item.dueDate = str};
 const setPriority = (item, str) => {item.priority = str};
 
+const storeUserData = () => {
+    let sideBarData = document.getElementById('side-container');
+    localStorage.setItem(sidebar, sideBarData.outerHTML);
+}
 
-export {  todoItem, setTitle, setDescr, setDate, setPriority  };
+
+export {  todoItem, setTitle, setDescr, setDate, setPriority, storeUserData  };
