@@ -1,3 +1,4 @@
+import {  storeUserData  } from './logic'
 import Swal from 'sweetalert2';
 
 const newList = (name) => {
@@ -9,11 +10,12 @@ const newList = (name) => {
     inp.setAttribute('type', 'radio');
     lab.setAttribute('class', 'tab');
     lab.setAttribute('for', `${count+1}`)
-    lab.setAttribute('id', `lab${count}`);
+    lab.setAttribute('id', `lab${count+1}`);
     lab.textContent = name;
 
     document.getElementById('side-container').appendChild(inp);
     inp.after(lab);
+    storeUserData();
 }
 
 const toggleRemove = () => {
@@ -29,7 +31,10 @@ const toggleRemove = () => {
 const remove = (e) => {
     let targ = e.target.id;
     let rem = document.getElementById(`${targ}`);
+    let rem2 = rem.previousElementSibling;
+    let rem2ID = rem2.id;
     document.getElementById(`${targ}`).parentElement.removeChild(rem);
+    document.getElementById(`${rem2ID}`).parentElement.removeChild(rem2);
 }
 const resetRemove = () => {
     let fin = document.getElementById('finished');
@@ -43,6 +48,7 @@ const resetRemove = () => {
     document.getElementById('remove').removeEventListener('click', resetRemove); 
     document.getElementById('remove').removeAttribute('style');
     
+    storeUserData();
 }
 const addList = () => {
     Swal.fire({
@@ -61,10 +67,9 @@ const addList = () => {
 
 const showHelp = () => {
     Swal.fire({
-        Title: 'Help',
-        text: 'Hello',
-        showCancelButton: true,
-
+        Title: 'Welcome to δα',
+        imageUrl: 'https://i.ibb.co/k14phvL/help.png',
+        showCancelButton: false,
     })
 }
 

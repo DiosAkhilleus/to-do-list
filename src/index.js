@@ -1,4 +1,4 @@
-import {  todoItem, setTitle, setDescr, setDate, setPriority  } from './logic';
+import {  todoItem, setTitle, setDescr, setDate, setPriority, storeUserData  } from './logic';
 import {  newList, toggleRemove, remove, resetRemove, addList, showHelp  } from './dom';
 import { compareAsc, format } from 'date-fns';
 import Swal from 'sweetalert2';
