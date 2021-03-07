@@ -1,4 +1,6 @@
-import {  toggleRemove, addList, showHelp  } from './dom';
+import {  toggleRemove, addList  } from './sidebar';
+import {  newToDo  } from './to-do-items';
+import {  showHelp  } from './header';
 
 // import { compareAsc, format } from 'date-fns';
 
@@ -17,3 +19,4 @@ document.getElementById('remove').addEventListener('click', toggleRemove);
 document.getElementById('add').addEventListener('click', addList);
 document.getElementById('help').addEventListener('click', showHelp);
 document.getElementById('1').checked = true;
+document.getElementById('new-to-do').addEventListener('click', newToDo);

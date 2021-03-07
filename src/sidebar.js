@@ -70,13 +70,7 @@ const addList = () => { // creates a new list by firing an alert in which the us
           newList(value.value);
       });
 }
-const showHelp = () => { //displays app info in the form of an alert
-    Swal.fire({
-        Title: 'Welcome to δα',
-        imageUrl: 'https://i.ibb.co/k14phvL/help.png',
-        showCancelButton: false,
-    })
-}
+
 const setTab = (e) => { // checks selected sidebar tab
     let tabs = document.querySelectorAll('.tab');
     for(let i = 0; i < tabs.length; i++){
@@ -93,4 +87,4 @@ const setTabListeners = () => { // updates sidebar tab click listeners
 }
 
 
-export {  newList, toggleRemove, remove, resetRemove, addList, showHelp, setTab, setTabListeners  };
+export {  newList, toggleRemove, remove, resetRemove, addList, setTab, setTabListeners  };
