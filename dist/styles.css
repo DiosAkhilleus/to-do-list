@@ -191,6 +191,7 @@ transition: color 0.2s linear 0s;
     background-repeat: no-repeat;
     background-size:90%;
     background-position:center;
+    width:90%;
 }
 .labelCheck:hover {
     cursor: pointer;
