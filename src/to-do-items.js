@@ -49,16 +49,16 @@ const createToDo = (array) => {
     let todo = document.createElement('div');
     
     todo.setAttribute('class', 'to-do-element');
-    todo.setAttribute('id', `${total+1}`);
+    todo.setAttribute('id', `${total-1}`);
     document.getElementById('main-container').appendChild(todo);
 
     let ch = document.createElement('input');
     ch.setAttribute('type', 'checkbox');
     ch.setAttribute('class', 'complete');
     ch.setAttribute('name', 'check');
-    ch.setAttribute('id', `check${total+1}`)
+    ch.setAttribute('id', `check${total-1}`)
     let lab = document.createElement('label');
-    lab.setAttribute('for', `check${total+1}`);
+    lab.setAttribute('for', `check${total-1}`);
     lab.setAttribute('class', 'labelCheck');
     let div1 = document.createElement('div');
     div1.setAttribute('class', 'title');
@@ -71,7 +71,7 @@ const createToDo = (array) => {
     div3.textContent = `${due}`;
     let div4 = document.createElement('div');
     div4.setAttribute('class', 'prior');
-    div4.setAttribute('id', `prior${total+1}`)
+    div4.setAttribute('id', `prior${total-1}`)
     
     
 
@@ -86,24 +86,31 @@ const createToDo = (array) => {
     document.getElementById('new-to-do').before(todo);
 
     if(imp === 'high'){
-        document.getElementById(`prior${total+1}`).style.backgroundColor = 'darkred';
+        document.getElementById(`prior${total-1}`).style.backgroundColor = 'darkred';
     }
     if(imp === 'medium'){
-        document.getElementById(`prior${total+1}`).style.backgroundColor = 'orange';
+        document.getElementById(`prior${total-1}`).style.backgroundColor = 'orange';
     }
     if(imp === 'low'){
-        document.getElementById(`prior${total+1}`).style.backgroundColor = 'olivedrab';
+        document.getElementById(`prior${total-1}`).style.backgroundColor = 'olivedrab';
     }
-
-    // <div class='to-do-element' id='1'>
-    //     <input type="checkbox" class='complete' name = 'check' id='check1'>
-    //     <label for="check1" id='checklabel' class='labelCheck'></label>
-    //     <div class='title'>Title</div>
-    //     <div class='desc'>Description</div>
-    //     <div class='due-date'>Due-Date</div>
-    //     <div class='prior'></div>
-    // </div>
 
 }
 
-export {  newToDo  };
+const setRemove = () => {
+    let items = document.querySelectorAll('.prior');
+    for(let i = 0; i < items.length; i++){
+        items[i].style.backgroundImage = "url('https://i.ibb.co/TLJL4kr/X.png')"
+        items[i].addEventListener('click', deleteToDo);
+    }
+}
+
+const deleteToDo = (e) => {
+    // set swal alert to ask delete confirm
+    // if yes, delete
+    let targ = e.target.id;
+    let parentEl = document.getElementById(`${targ}`).parentElement;
+    parentEl.parentElement.removeChild(parentEl); 
+}
+
+export {  newToDo, setRemove  };
