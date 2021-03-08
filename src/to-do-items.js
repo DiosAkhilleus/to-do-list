@@ -103,6 +103,8 @@ const setRemove = () => {
         items[i].style.backgroundImage = "url('https://i.ibb.co/TLJL4kr/X.png')"
         items[i].addEventListener('click', deleteToDo);
     }
+    document.getElementById('remove-to-do').removeEventListener('click', setRemove);
+    createDone();
 }
 
 const deleteToDo = (e) => {
@@ -111,6 +113,32 @@ const deleteToDo = (e) => {
     let targ = e.target.id;
     let parentEl = document.getElementById(`${targ}`).parentElement;
     parentEl.parentElement.removeChild(parentEl); 
+}
+
+const createDone = () => {
+    let done = document.createElement('button');
+    let br = document.createElement('br');
+    done.setAttribute('id', 'finished');
+    done.textContent = "Finished";
+    document.getElementById('main-container').appendChild(done);
+    document.getElementById('main-container').appendChild(br);
+    document.getElementById('remove-to-do').after(br);
+    br.after(done);
+    document.getElementById('finished').addEventListener('click', resetRemove);
+
+}
+
+const resetRemove = () => {
+    let done = document.getElementById('finished');
+    let divs = document.querySelectorAll('.prior');
+    for(let i = 0; i < divs.length; i++){
+        divs[i].style.backgroundImage = '';
+        divs[i].removeEventListener('click', deleteToDo);
+    }
+    done.removeEventListener('click', resetRemove);
+    done.parentElement.removeChild(done);
+    document.getElementById('remove-to-do').addEventListener('click', setRemove);
+
 }
 
 export {  newToDo, setRemove  };

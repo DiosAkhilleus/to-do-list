@@ -147,7 +147,7 @@ transition: color 0.2s linear 0s;
     overflow:hidden;
     text-align: center;
 }
-#new-to-do, #remove-to-do {
+#new-to-do, #remove-to-do, #finished {
     width:40%;
     height:40px;
     margin-top:8px;
@@ -157,7 +157,7 @@ transition: color 0.2s linear 0s;
     font-size:30px;
     line-height:10px;
 }
-#new-to-do:hover, #remove-to-do:hover {
+#new-to-do:hover, #remove-to-do:hover, #finished:hover {
     cursor: pointer;
     border: 2px solid lightgray;
 }
