@@ -1,4 +1,4 @@
-import {  storeUserData  } from './logic'
+import {  storeSideBar  } from './storage'
 import Swal from 'sweetalert2';
 
 const newList = (name) => { // creates a new list with name passed
@@ -16,8 +16,8 @@ const newList = (name) => { // creates a new list with name passed
 
     document.getElementById('side-container').appendChild(inp);
     inp.after(lab);
-    storeUserData();
     setTabListeners();
+    storeSideBar();
 }
 const toggleRemove = () => { // toggles the removal state so that elements can be removed from list set, adds done button
     let tabs = document.getElementsByClassName('tab');
@@ -54,7 +54,7 @@ const resetRemove = () => { // makes elements in sidebar unremovable, removes do
     if(document.getElementById('side-container').childElementCount === 2){
         document.getElementById('1').checked = true;
     }
-    storeUserData();
+    storeSideBar();
 }
 const addList = () => { // creates a new list by firing an alert in which the user can input a name, which is then passed to the newList() function
     Swal.fire({
@@ -84,5 +84,6 @@ const setTabListeners = () => { // updates sidebar tab click listeners
         tabs[i].addEventListener('click', setTab);
     }
 }
+
 
 export {  newList, toggleRemove, remove, resetRemove, addList, setTab, setTabListeners  };

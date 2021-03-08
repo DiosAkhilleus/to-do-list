@@ -1,6 +1,7 @@
 import {  toggleRemove, addList  } from './sidebar';
 import {  newToDo, setRemove  } from './to-do-items';
 import {  showHelp  } from './header';
+import {  setSideBar  } from './storage';
 
 // import { compareAsc, format } from 'date-fns';
 
@@ -21,6 +22,10 @@ document.getElementById('help').addEventListener('click', showHelp);
 document.getElementById('1').checked = true;
 document.getElementById('new-to-do').addEventListener('click', newToDo);
 
-if(document.getElementById('main-container').childElementCount > 1){
+document.onload = setSideBar();
+document.onload = document.getElementById('1').checked = true;
+
+
+if(document.getElementById('main-container').childElementCount > 2){
     document.getElementById('remove-to-do').addEventListener('click', setRemove);
 }

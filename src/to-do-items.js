@@ -1,5 +1,5 @@
 import Swal from 'sweetalert2';
-import {    } from './logic';
+import {    } from './storage';
 
 const newToDo = () => { // creates an alert in which the user can input all necessary to-do fields. if all fields are filled, it will create a new to-do with the data provided
     let arr = [];
