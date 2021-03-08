@@ -189,7 +189,7 @@ transition: color 0.2s linear 0s;
     border-right: 2px solid lightgray;
     background-image:url('https://i.ibb.co/dPKqLVc/checkbox-unchecked.png');
     background-repeat: no-repeat;
-    background-size:90%;
+    background-size:75%;
     background-position:center;
     width:90%;
 }
@@ -202,7 +202,7 @@ input[type='checkbox'] {
 input[type='checkbox']:checked + label {
 background-image: url('https://i.ibb.co/mJybySS/checkbox-checked.png');
 background-repeat: no-repeat;
-background-size:90%;
+background-size:75%;
 background-position:center;
 }
 
