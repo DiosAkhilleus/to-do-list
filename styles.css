@@ -147,7 +147,7 @@ transition: color 0.2s linear 0s;
     overflow:hidden;
     text-align: center;
 }
-#new-to-do {
+#new-to-do, #remove-to-do {
     width:40%;
     height:40px;
     margin-top:8px;
@@ -157,7 +157,7 @@ transition: color 0.2s linear 0s;
     font-size:30px;
     line-height:10px;
 }
-#new-to-do:hover {
+#new-to-do:hover, #remove-to-do:hover {
     cursor: pointer;
     border: 2px solid lightgray;
 }
@@ -220,7 +220,12 @@ background-position:center;
 .prior {
     grid-column: 12 / span 1;
     background-color:rgb(68, 123, 68);
-    /* border-left: 2px solid darkslategray; */
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:50%;
+}
+.prior:hover {
+    cursor:pointer;
 }
 .title, .desc, .due-date, .prior, .complete {
 font-size:20px;
