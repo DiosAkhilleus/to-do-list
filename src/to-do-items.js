@@ -16,6 +16,9 @@ const newToDo = () => {
             high: 'High'
         },
         inputPlaceholder: 'Set Priority',
+        showCancelButton: true,
+        confirmButtonColor: '#3085D6',
+        confirmButtonText: 'Add',
         focusConfirm: false,
         preConfirm: () => {
           return [
@@ -31,8 +34,10 @@ const newToDo = () => {
                 return "Must fill all fields!"
             }
         }
-      }).then (function(){
-        createToDo(arr);
+      }).then((result) => {
+          if (result.isConfirmed) {
+              createToDo(arr);
+          }
       });
       arr = [];
 }
