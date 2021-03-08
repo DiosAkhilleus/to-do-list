@@ -1,5 +1,7 @@
 import Swal from 'sweetalert2';
-import {    } from './storage';
+import { storeMain } from './storage';
+
+
 
 const newToDo = () => { // creates an alert in which the user can input all necessary to-do fields. if all fields are filled, it will create a new to-do with the data provided
     let arr = [];
@@ -47,7 +49,6 @@ const createToDo = (array) => { // takes the user data from the newToDo alert an
     let desc = array[1];
     let due = array[2];
     let imp = array[3];
-    console.log(imp);
 
     let total = document.getElementById('main-container').childElementCount;
     let todo = document.createElement('div');
@@ -96,6 +97,10 @@ const createToDo = (array) => { // takes the user data from the newToDo alert an
     if(imp === 'low'){
         document.getElementById(`prior${total-1}`).style.backgroundColor = 'olivedrab';
     }
+    if(document.getElementById('main-container').childElementCount > 2){
+        document.getElementById('remove-to-do').addEventListener('click', setRemove);
+    }
+    storeMain();
 }
 
 const setRemove = () => { // adds an x to all priority elements (the colored ones denoting to-do priority) and adds event listeners for removal of each element
@@ -106,9 +111,10 @@ const setRemove = () => { // adds an x to all priority elements (the colored one
     }
     document.getElementById('remove-to-do').removeEventListener('click', setRemove);
     createDone();
+    storeMain();
 }
 
-const deleteToDo = (e) => { // accepts the target of a targeted priority element, then removes the parent to-do element from main-content
+const deleteToDo = (e) => { // accepts the target of a targeted priority element, then removes the parent to-do element from main-container
     // set swal alert to ask delete confirm
     // if yes, delete
     let targ = e.target.id;
@@ -137,7 +143,10 @@ const resetRemove = () => { //resets the priority divs so they don't have the x 
     }
     done.removeEventListener('click', resetRemove);
     done.parentElement.removeChild(done);
-    document.getElementById('remove-to-do').addEventListener('click', setRemove);
+    if(document.getElementById('main-container').childElementCount > 2){
+        document.getElementById('remove-to-do').addEventListener('click', setRemove);
+    }
+    storeMain();
 }
 
 export {  newToDo, setRemove  };

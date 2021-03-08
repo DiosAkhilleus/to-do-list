@@ -1,4 +1,4 @@
-import {  storeSideBar  } from './storage'
+import {  storeSideBar, displayMain  } from './storage'
 import Swal from 'sweetalert2';
 
 const newList = (name) => { // creates a new list with name passed
@@ -40,6 +40,7 @@ const remove = (e) => { // removes the target element
     let rem2ID = rem2.id;
     document.getElementById(`${targ}`).parentElement.removeChild(rem);
     document.getElementById(`${rem2ID}`).parentElement.removeChild(rem2);
+    localStorage.removeItem(`tab${rem2ID}`);
 }
 const resetRemove = () => { // makes elements in sidebar unremovable, removes done button
     let done = document.getElementById('done');
@@ -76,7 +77,8 @@ const setTab = (e) => { // checks selected sidebar tab
         tabs[i].checked = false;
     }   
     e.target.checked = true;
-    console.log(e.target.checked);
+    console.log('Check!');
+    displayMain();
 }
 const setTabListeners = () => { // updates sidebar tab click listeners
     let tabs = document.querySelectorAll('.tab');

@@ -1,5 +1,5 @@
-import {  toggleRemove, addList  } from './sidebar';
-import {  newToDo, setRemove  } from './to-do-items';
+import {  toggleRemove, addList, setTabListeners  } from './sidebar';
+import {  newToDo  } from './to-do-items';
 import {  showHelp  } from './header';
 import {  setSideBar  } from './storage';
 
@@ -12,20 +12,20 @@ import {  setSideBar  } from './storage';
 //     new Date(1995, 6, 2),
 //     new Date(1987, 1, 11),
 //     new Date(1989, 6, 10),
-//   ] 
+//   ]  
 //   dates.sort(compareAsc);
 //todo structure: title, description, dueDate, priority
 
 document.getElementById('remove').addEventListener('click', toggleRemove);
 document.getElementById('add').addEventListener('click', addList);
 document.getElementById('help').addEventListener('click', showHelp);
-document.getElementById('1').checked = true;
+// document.getElementById('1').checked = true;
 document.getElementById('new-to-do').addEventListener('click', newToDo);
 
+
 document.onload = setSideBar();
+setTabListeners();
 document.onload = document.getElementById('1').checked = true;
 
 
-if(document.getElementById('main-container').childElementCount > 2){
-    document.getElementById('remove-to-do').addEventListener('click', setRemove);
-}
+
