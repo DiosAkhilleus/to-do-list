@@ -70,7 +70,6 @@ const addList = () => { // creates a new list by firing an alert in which the us
           newList(value.value);
       });
 }
-
 const setTab = (e) => { // checks selected sidebar tab
     let tabs = document.querySelectorAll('.tab');
     for(let i = 0; i < tabs.length; i++){
@@ -85,6 +84,5 @@ const setTabListeners = () => { // updates sidebar tab click listeners
         tabs[i].addEventListener('click', setTab);
     }
 }
-
 
 export {  newList, toggleRemove, remove, resetRemove, addList, setTab, setTabListeners  };

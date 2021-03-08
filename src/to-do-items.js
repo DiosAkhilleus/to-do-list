@@ -1,7 +1,7 @@
 import Swal from 'sweetalert2';
 import {    } from './logic';
 
-const newToDo = () => {
+const newToDo = () => { // creates an alert in which the user can input all necessary to-do fields. if all fields are filled, it will create a new to-do with the data provided
     let arr = [];
     Swal.fire({
         title: 'New To-Do',
@@ -42,13 +42,12 @@ const newToDo = () => {
       arr = [];
 }
 
-const createToDo = (array) => {
+const createToDo = (array) => { // takes the user data from the newToDo alert and creates a to-do element, then adds it to main-content 
     let title = array[0];
     let desc = array[1];
     let due = array[2];
     let imp = array[3];
     console.log(imp);
-    // let add = document.getElementById('new-to-do');
 
     let total = document.getElementById('main-container').childElementCount;
     let todo = document.createElement('div');
@@ -78,8 +77,6 @@ const createToDo = (array) => {
     div4.setAttribute('class', 'prior');
     div4.setAttribute('id', `prior${total-1}`)
     
-    
-
     todo.appendChild(ch);
     ch.after(lab);
     lab.after(div1);
@@ -87,9 +84,9 @@ const createToDo = (array) => {
     div2.after(div3);
     div3.after(div4);
 
-    
     document.getElementById('new-to-do').before(todo);
 
+    // this set of if() statements sets the color of the to-do element depending on the priority set
     if(imp === 'high'){
         document.getElementById(`prior${total-1}`).style.backgroundColor = 'darkred';
     }
@@ -99,10 +96,9 @@ const createToDo = (array) => {
     if(imp === 'low'){
         document.getElementById(`prior${total-1}`).style.backgroundColor = 'olivedrab';
     }
-
 }
 
-const setRemove = () => {
+const setRemove = () => { // adds an x to all priority elements (the colored ones denoting to-do priority) and adds event listeners for removal of each element
     let items = document.querySelectorAll('.prior');
     for(let i = 0; i < items.length; i++){
         items[i].style.backgroundImage = "url('https://i.ibb.co/TLJL4kr/X.png')"
@@ -112,7 +108,7 @@ const setRemove = () => {
     createDone();
 }
 
-const deleteToDo = (e) => {
+const deleteToDo = (e) => { // accepts the target of a targeted priority element, then removes the parent to-do element from main-content
     // set swal alert to ask delete confirm
     // if yes, delete
     let targ = e.target.id;
@@ -120,7 +116,7 @@ const deleteToDo = (e) => {
     parentEl.parentElement.removeChild(parentEl); 
 }
 
-const createDone = () => {
+const createDone = () => { // adds a done button to let user choose when finished removing to-do elements
     let done = document.createElement('button');
     let br = document.createElement('br');
     done.setAttribute('id', 'finished');
@@ -130,10 +126,9 @@ const createDone = () => {
     document.getElementById('remove-to-do').after(br);
     br.after(done);
     document.getElementById('finished').addEventListener('click', resetRemove);
-
 }
 
-const resetRemove = () => {
+const resetRemove = () => { //resets the priority divs so they don't have the x visible. also resets event listeners to default and removes the done button
     let done = document.getElementById('finished');
     let divs = document.querySelectorAll('.prior');
     for(let i = 0; i < divs.length; i++){
@@ -143,7 +138,6 @@ const resetRemove = () => {
     done.removeEventListener('click', resetRemove);
     done.parentElement.removeChild(done);
     document.getElementById('remove-to-do').addEventListener('click', setRemove);
-
 }
 
 export {  newToDo, setRemove  };
