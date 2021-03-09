@@ -1,4 +1,4 @@
-import {  toggleRemove, addList, setTabListeners  } from './sidebar';
+import {  toggleRemove, addList, setTabListeners, setHome  } from './sidebar';
 import {  newToDo  } from './to-do-items';
 import {  showHelp  } from './header';
 import {  setSideBar  } from './storage';
@@ -25,7 +25,7 @@ document.getElementById('new-to-do').addEventListener('click', newToDo);
 
 document.onload = setSideBar();
 setTabListeners();
-document.onload = document.getElementById('1').checked = true;
+document.onload = setHome();
 
 
 

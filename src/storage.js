@@ -10,18 +10,26 @@ import {  newToDo, setRemove  } from './to-do-items';
 // const setDate =     (item, str) => {item.dueDate = str};
 // const setPriority = (item, str) => {item.priority = str};
 
-const DEFAULT_MAIN_CONTENT = "<button id=\"new-to-do\">+ Add Item</button><button id=\"remove-to-do\">– Remove Items</button>";
+const DEFAULT_MAIN_CONTENT = "<button id=\"new-to-do\">+ New To-Do</button><button id=\"remove-to-do\">– Remove Items</button>";
+const DEFAULT_SIDE_CONTENT = "<input type=\"radio\" class=\"side-nav\" id=\"1\" name=\"side-tabs\"><label for=\"1\" class=\"tab\" id=\"lab1\">Home</label>";
 
 const storeSideBar = () => { // stores sidebar data in localStorage
     // let sideBarData = document.getElementById('side-container');
     // eslint-disable-next-line no-undef
-    localStorage.setItem(sidebar, document.getElementById('side-container').innerHTML);
+    localStorage.setItem('sidebar', document.getElementById('side-container').innerHTML);
 }
 const setSideBar = () => {
     // eslint-disable-next-line no-undef
-    document.getElementById('side-container').innerHTML = localStorage.getItem(sidebar);
+    let side = localStorage.getItem('sidebar');
+    if(side !== null){
+        document.getElementById('side-container').innerHTML = localStorage.getItem('sidebar');
+    }
+    if(side === null){
+        document.getElementById('side-container').innerHTML = DEFAULT_SIDE_CONTENT;
+    }
 }
 const storeMain = () => {
+    console.log('store main');
     let tabs = document.querySelectorAll('.tab');
     for(let i = 0; i < tabs.length; i++){
         if(tabs[i].previousElementSibling.checked === true){
@@ -33,10 +41,12 @@ const storeMain = () => {
 }
 
 const displayMain = () => {
+    console.log('disp main');
     let tabs = document.querySelectorAll('.tab');
     for(let i = 0; i < tabs.length; i++){
-        if(tabs[i].checked === true){
+        if(tabs[i].previousElementSibling.checked === true){
             let contentID = tabs[i].previousElementSibling.id;
+            console.log(contentID);
             let storageExists = localStorage.getItem(`tab${contentID}`);
             if(storageExists !== null){
                 document.getElementById('main-container').innerHTML = localStorage.getItem(`tab${contentID}`);

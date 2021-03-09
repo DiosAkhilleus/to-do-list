@@ -41,6 +41,9 @@ const remove = (e) => { // removes the target element
     document.getElementById(`${targ}`).parentElement.removeChild(rem);
     document.getElementById(`${rem2ID}`).parentElement.removeChild(rem2);
     localStorage.removeItem(`tab${rem2ID}`);
+    if(document.getElementById('side-container').childElementCount === 2){
+        document.getElementById('1').checked = true;
+    }
 }
 const resetRemove = () => { // makes elements in sidebar unremovable, removes done button
     let done = document.getElementById('done');
@@ -74,10 +77,9 @@ const addList = () => { // creates a new list by firing an alert in which the us
 const setTab = (e) => { // checks selected sidebar tab
     let tabs = document.querySelectorAll('.tab');
     for(let i = 0; i < tabs.length; i++){
-        tabs[i].checked = false;
+        tabs[i].previousElementSibling.checked = false;
     }   
-    e.target.checked = true;
-    console.log('Check!');
+    e.target.previousElementSibling.checked = true;
     displayMain();
 }
 const setTabListeners = () => { // updates sidebar tab click listeners
@@ -86,6 +88,14 @@ const setTabListeners = () => { // updates sidebar tab click listeners
         tabs[i].addEventListener('click', setTab);
     }
 }
+const setHome = () => {
+    let tabs = document.querySelectorAll('.tab');
+    for(let i = 0; i < tabs.length; i++){
+        tabs[i].checked = false;
+    }   
+    document.getElementById('1').checked = true;
+    displayMain();
+}
 
 
-export {  newList, toggleRemove, remove, resetRemove, addList, setTab, setTabListeners  };
+export {  newList, toggleRemove, remove, resetRemove, addList, setTab, setTabListeners, setHome  };

@@ -111,7 +111,6 @@ const setRemove = () => { // adds an x to all priority elements (the colored one
     }
     document.getElementById('remove-to-do').removeEventListener('click', setRemove);
     createDone();
-    storeMain();
 }
 
 const deleteToDo = (e) => { // accepts the target of a targeted priority element, then removes the parent to-do element from main-container
@@ -125,6 +124,7 @@ const deleteToDo = (e) => { // accepts the target of a targeted priority element
 const createDone = () => { // adds a done button to let user choose when finished removing to-do elements
     let done = document.createElement('button');
     let br = document.createElement('br');
+    br.setAttribute('id', 'br');
     done.setAttribute('id', 'finished');
     done.textContent = "Finished";
     document.getElementById('main-container').appendChild(done);
@@ -137,12 +137,14 @@ const createDone = () => { // adds a done button to let user choose when finishe
 const resetRemove = () => { //resets the priority divs so they don't have the x visible. also resets event listeners to default and removes the done button
     let done = document.getElementById('finished');
     let divs = document.querySelectorAll('.prior');
+    let br = document.getElementById('br');
     for(let i = 0; i < divs.length; i++){
         divs[i].style.backgroundImage = '';
         divs[i].removeEventListener('click', deleteToDo);
     }
     done.removeEventListener('click', resetRemove);
     done.parentElement.removeChild(done);
+    br.parentElement.removeChild(br);
     if(document.getElementById('main-container').childElementCount > 2){
         document.getElementById('remove-to-do').addEventListener('click', setRemove);
     }
