@@ -91,6 +91,7 @@ body {
     color:#E6E6E6;
     font-size:14px;
     user-select: none;
+    margin-top:5px;
 }
 #remove {
     background-color:rgb(130, 50, 50);
