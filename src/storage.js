@@ -40,7 +40,6 @@ const storeMain = () => {
         }
     }
 }
-
 const displayMain = () => {
     console.log('disp main');
     let tabs = document.querySelectorAll('.tab');
@@ -62,6 +61,15 @@ const displayMain = () => {
         document.getElementById('remove-to-do').addEventListener('click', setRemove);
     }
 }
+const updateHome = () => {
+    console.log(localStorage.getItem('tab1'));
+    let tabs = document.querySelectorAll('.tab');
+    let str = "";
+    for (let i = 2; i < tabs.length; i++){
+        str += localStorage.getItem(`tab${i}`);
+    }
+    console.log(str);
+}
 
 
-export {  storeSideBar, setSideBar, storeMain, displayMain  };
+export {  storeSideBar, setSideBar, storeMain, displayMain, updateHome  };

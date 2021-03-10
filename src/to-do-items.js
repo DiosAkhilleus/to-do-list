@@ -1,5 +1,5 @@
 import Swal from 'sweetalert2';
-import { storeMain } from './storage';
+import { storeMain, updateHome } from './storage';
 
 
 
@@ -98,10 +98,11 @@ const createToDo = (array) => { // takes the user data from the newToDo alert an
     if(imp === 'low'){
         document.getElementById(`prior${total-1}`).style.backgroundColor = 'olivedrab';
     }
-    if(document.getElementById('main-container').childElementCount > 2){
+    if(document.getElementById('main-container').childElementCount > 1){
         document.getElementById('remove-to-do').addEventListener('click', setRemove);
     }
     storeMain();
+    updateHome();
 }
 
 const setRemove = () => { // adds an x to all priority elements (the colored ones denoting to-do priority) and adds event listeners for removal of each element
@@ -146,7 +147,7 @@ const resetRemove = () => { //resets the priority divs so they don't have the x 
     done.removeEventListener('click', resetRemove);
     done.parentElement.removeChild(done);
     br.parentElement.removeChild(br);
-    if(document.getElementById('main-container').childElementCount > 2){
+    if(document.getElementById('main-container').childElementCount > 1){
         document.getElementById('remove-to-do').addEventListener('click', setRemove);
     }
     storeMain();
