@@ -10,7 +10,8 @@ import {  newToDo, setRemove  } from './to-do-items';
 // const setDate =     (item, str) => {item.dueDate = str};
 // const setPriority = (item, str) => {item.priority = str};
 
-const DEFAULT_MAIN_CONTENT = "<button id=\"new-to-do\">+ New To-Do</button><button id=\"remove-to-do\">– Remove Items</button>";
+const DEFAULT_MAIN_CONTENT = "<div id='place'></div>";
+// const DEFAULT_MAIN_CONTENT = "<button id=\"new-to-do\">+ New To-Do</button><button id=\"remove-to-do\">– Remove Items</button>";
 const DEFAULT_SIDE_CONTENT = "<input type=\"radio\" class=\"side-nav\" id=\"1\" name=\"side-tabs\"><label for=\"1\" class=\"tab\" id=\"lab1\">Home</label>";
 
 const storeSideBar = () => { // stores sidebar data in localStorage

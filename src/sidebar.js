@@ -56,7 +56,7 @@ const resetRemove = () => { // makes elements in sidebar unremovable, removes do
     document.getElementById('done').removeEventListener('click', resetRemove); 
     document.getElementById('done').parentElement.removeChild(done);
     if(document.getElementById('side-container').childElementCount === 2){
-        document.getElementById('1').checked = true;
+        setHome();
     }
     storeSideBar();
 }

@@ -49,6 +49,7 @@ const createToDo = (array) => { // takes the user data from the newToDo alert an
     let desc = array[1];
     let due = array[2];
     let imp = array[3];
+    console.log(imp);
 
     let total = document.getElementById('main-container').childElementCount;
     let todo = document.createElement('div');
@@ -85,7 +86,7 @@ const createToDo = (array) => { // takes the user data from the newToDo alert an
     div2.after(div3);
     div3.after(div4);
 
-    document.getElementById('new-to-do').before(todo);
+    document.getElementById('place').before(todo);
 
     // this set of if() statements sets the color of the to-do element depending on the priority set
     if(imp === 'high'){
