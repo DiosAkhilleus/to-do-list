@@ -12,7 +12,7 @@ const newList = (name) => { // creates a new list with name passed
     lab.setAttribute('class', 'tab');
     lab.setAttribute('for', `${count+1}`)
     lab.setAttribute('id', `lab${count+1}`);
-    lab.textContent = name;
+    lab.textContent = ` – ${name}`;
 
     document.getElementById('side-container').appendChild(inp);
     inp.after(lab);

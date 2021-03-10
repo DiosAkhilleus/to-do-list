@@ -62,13 +62,15 @@ const displayMain = () => {
     }
 }
 const updateHome = () => {
-    console.log(localStorage.getItem('tab1'));
     let tabs = document.querySelectorAll('.tab');
     let str = "";
-    for (let i = 2; i < tabs.length; i++){
-        str += localStorage.getItem(`tab${i}`);
+    for (let i = 2; i <= tabs.length; i++){
+        let store = localStorage.getItem(`tab${i}`);
+        console.log(store);
+        str = str + store;
     }
     console.log(str);
+    localStorage.setItem('tab1', `${str}`);
 }
 
 

@@ -151,6 +151,7 @@ const resetRemove = () => { //resets the priority divs so they don't have the x 
         document.getElementById('remove-to-do').addEventListener('click', setRemove);
     }
     storeMain();
+    updateHome();
 }
 
 export {  newToDo, setRemove  };
