@@ -69,7 +69,7 @@ const updateHome = () => {
         console.log(store);
         str = str + store;
     }
-    console.log(str);
+    console.log(str); 
     localStorage.setItem('tab1', `${str}`);
 }
 
