@@ -9,4 +9,7 @@ Instructions:
 3. Data will be stored for the next time you visit the page.
 4. Enjoy!
 
+- Home page should display all active to-do items.
+- Still working on fixing some updating and display bugs.
+
 --DiosAkhilleus
