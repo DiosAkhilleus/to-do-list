@@ -15,7 +15,7 @@ import {  setSideBar  } from './storage';
 //   ]  
 //   dates.sort(compareAsc);
 //todo structure: title, description, dueDate, priority
-
+ 
 document.getElementById('remove').addEventListener('click', toggleRemove);
 document.getElementById('add').addEventListener('click', addList);
 document.getElementById('help').addEventListener('click', showHelp);
