@@ -1,4 +1,4 @@
-# to-do-list
+# To-Do-List
 
 Worked on as part of The Odin Project
 
@@ -10,6 +10,9 @@ Instructions:
 4. Enjoy!
 
 - Home page should display all active to-do items.
-- Still working on fixing some updating and display bugs.
+
+## Future Changes: 
+ - Planning on making home page "read only."
+ - Check marks should update on home page.
 
 --DiosAkhilleus
