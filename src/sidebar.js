@@ -88,7 +88,7 @@ const setTabListeners = () => { // updates sidebar tab click listeners
         tabs[i].addEventListener('click', setTab);
     }
 }
-const setHome = () => {
+const setHome = () => { // sets the tab to "home." Used onload and when all other tabs are deleted
     let tabs = document.querySelectorAll('.tab');
     for(let i = 0; i < tabs.length; i++){
         tabs[i].checked = false;

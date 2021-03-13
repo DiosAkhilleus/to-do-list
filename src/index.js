@@ -19,10 +19,7 @@ import {  setSideBar  } from './storage';
 document.getElementById('remove').addEventListener('click', toggleRemove);
 document.getElementById('add').addEventListener('click', addList);
 document.getElementById('help').addEventListener('click', showHelp);
-// document.getElementById('1').checked = true;
 document.getElementById('new-to-do').addEventListener('click', newToDo);
-
-
 document.onload = setSideBar();
 setTabListeners();
 document.onload = setHome();

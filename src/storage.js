@@ -19,17 +19,17 @@ const storeSideBar = () => { // stores sidebar data in localStorage
     // eslint-disable-next-line no-undef
     localStorage.setItem('sidebar', document.getElementById('side-container').innerHTML);
 }
-const setSideBar = () => {
+const setSideBar = () => { // sets sidebar from data in localStorage
     // eslint-disable-next-line no-undef
     let side = localStorage.getItem('sidebar');
     if(side !== null){
         document.getElementById('side-container').innerHTML = localStorage.getItem('sidebar');
     }
-    if(side === null){
+    if(side === null){ // if sidebar content doesn't exist in local storage, initializes sidebar with default value
         document.getElementById('side-container').innerHTML = DEFAULT_SIDE_CONTENT;
     }
 }
-const storeMain = () => {
+const storeMain = () => { // stores the data from the current tab in localStorage
     console.log('store main');
     let tabs = document.querySelectorAll('.tab');
     for(let i = 0; i < tabs.length; i++){
@@ -40,7 +40,7 @@ const storeMain = () => {
         }
     }
 }
-const displayMain = () => {
+const displayMain = () => { // pulls data for current tab from localStorage
     console.log('disp main');
     let tabs = document.querySelectorAll('.tab');
     for(let i = 0; i < tabs.length; i++){
@@ -51,7 +51,7 @@ const displayMain = () => {
             if(storageExists !== null){
                 document.getElementById('main-container').innerHTML = localStorage.getItem(`tab${contentID}`);
             }
-            if(storageExists === null){
+            if(storageExists === null){ // if tab data doesn't exist in localStorage, pulls default value
                 document.getElementById('main-container').innerHTML = DEFAULT_MAIN_CONTENT;
             }
         }
@@ -61,7 +61,7 @@ const displayMain = () => {
         document.getElementById('remove-to-do').addEventListener('click', setRemove);
     }
 }
-const updateHome = () => {
+const updateHome = () => { // takes all tab data from local storage, adds it together, then puts it into the home tab
     let tabs = document.querySelectorAll('.tab');
     let str = "";
     for (let i = 2; i <= tabs.length; i++){
